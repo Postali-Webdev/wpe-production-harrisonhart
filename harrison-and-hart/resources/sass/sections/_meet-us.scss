@@ -1,0 +1,75 @@
+.meet-us{
+    padding-left: rem(15px);
+	padding-right: rem(15px);
+    @include mq($screen-xxxs) {
+	    padding-left: rem($half-spacing-unit);
+	    padding-right: rem($half-spacing-unit);
+    }
+    @include mq($tablet-breakpoint) {
+	    padding-left: rem($base-spacing-unit * -1);
+	    padding-right: rem($base-spacing-unit * -1);
+    }
+    @include mq($screen-lg-md){
+        padding-left:0;
+        padding-right:0;
+    }
+    &__card{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        align-items: center;
+        &.active{
+            display:flex;
+        }
+        .headshot{
+            width:50%;
+        }
+        .copy-container{
+            width:100%;
+            padding:rem($half-spacing-unit * 0.5);
+        }
+        @include mq($mobile-breakpoint){
+            .copy-container{
+                width:100%;
+                padding:rem($half-spacing-unit);
+            }
+        }
+        @include mq($screen-lg-md){
+            flex-direction:row;
+            justify-content: flex-start;
+            align-content: flex-start;
+            .headshot{
+                width:initial;
+                img{
+                    margin-top:-20%;
+                }
+            }
+            .copy-container{
+                width:initial;
+            }
+        } 
+    }
+    
+    
+    .name-btn{
+        font-size:22px;
+        &.active{
+            color:$color-cyan;
+            text-decoration: underline;
+        }
+    }
+    .ampersand{
+        width: 49px;
+        height: 44px;
+        background-image:url(./assets/img/ampersand.svg);
+        @include mq($tablet-breakpoint) {
+            width:81px;
+            height:72px;
+        }
+    }
+    @include mq($mobile-breakpoint){
+        .bar{
+            padding-left:13%;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.youtube-wrapper, .video-wrapper{
+    position: relative;
+    padding-bottom: 52.25%; /* 16:9 : https://css-tricks.com/fluid-width-video/ */
+    height: 0;
+
+    iframe, video{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+.modal__container {
+    display: none;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    outline:0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    box-sizing: border-box;
+    background:	url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGDYzEABYBw1gGE0DBhGw4BhWIQBACBYC0GfFSf4AAAAAElFTkSuQmCC);
+    background:	rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    
+    z-index: 9999; 
+    
+    &.show {
+        display: block!important;
+    }
+}
+#modal__background-click{
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#modal__close-btn{
+    position: absolute;
+    cursor: pointer;
+    top: -45px;
+    right: -35px;
+    width: 70px;
+    height: 70px;
+    display: block;
+    text-align: center;
+    
+    &:after{
+        position: absolute;
+        content: '\d7';
+        font-size: 30px; 
+        color: #FFF;
+    }
+    @include mq($screen-lg) {
+        &:after{
+            font-size: 50px;
+        }
+    }
+}
+#modal__template {
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+  

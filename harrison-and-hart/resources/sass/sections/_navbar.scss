@@ -1,0 +1,379 @@
+#navbar{
+    //remove all spacing and default bullet points from list items for all menus
+    ul{
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        li{
+            margin: 0;
+            a{
+                text-decoration: none;
+                text-transform: none;
+                font-size: 17px;
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    //Mobile styling
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    
+    padding-top:15px;
+    padding-bottom:15px;
+
+    font-size:18px;
+    
+    @include mq($navigation-breakpoint){
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        height:117px;
+        overflow:initial;
+        max-height: initial;
+    }
+
+
+    .navbar-logo{
+        content:' ';
+        display:block;
+        height:33px;
+        width: 100%;
+        background-size:contain;
+        background-position-x: left;
+        background-position-y: center;
+        background-image: url('./assets/img/logo-stacked.svg');
+
+        // @include mq($navigation-breakpoint){
+        //     height:28px;
+        //     max-width:473px;
+        //     background-image: url('./assets/img/logo-horizontal.svg');
+        // }
+        @include mq($screen-xl){
+            height:28px;
+            max-width:473px;
+            background-image: url('./assets/img/logo-horizontal.svg');
+        }
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100%;
+        // width: 100%;
+
+        @include mq($navigation-breakpoint){
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    // <span class="menu-label"> gets added with wp_nav_menu > link_before
+    // Re-wrote nav walker to wrap top menu-items in flexbox since the indicator needs to be a sperate element so javascript can add click listener and can't do so on psudeo :after element
+    .menu-item {
+
+        @include mq($navigation-breakpoint){
+            height:100%;
+            overflow: visible;
+            position: relative;
+        }
+        .menu-label {
+            font-size:28px;
+            font-weight: 700;
+            line-height: 24px;
+            position: relative;
+            
+            @include mq($navigation-breakpoint){
+                line-height:initial;
+                font-weight: initial;
+                font-size: 18px;
+            }
+        }
+
+        &.menu-item-has-children{
+            @include mq($navigation-breakpoint){
+                .menu-label {
+                    display:flex;
+                    flex-wrap:nowrap;
+                    align-items: center;
+                    &:after{
+                        content:'';
+                        display:block;
+                        width: 0;
+                        height: 0;
+                        margin-left: 9px;
+                        border-style: solid;
+                        border-width: 5px 5px 0 5px;
+                        border-color: $color-darkgray transparent transparent transparent;
+                    }
+                }
+                &:hover{
+                    .menu-label {
+                        &:after{
+                            border-color: $color-cyan transparent transparent transparent;
+                        }
+                    }
+                    .hover-expand{
+                        display:block;
+                    }
+                }
+            }
+        }
+
+        //New element wrapper added in nav_walker for just parent top level main nav items
+        .top-menu-item {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+    
+            margin: 0;
+            padding:10px 0;
+    
+            position:relative;
+            height:100%;
+            
+           
+            // Mobile only js-mobile-toggle expand btn styling when 'toggle-background' is added
+            .js-mobile-menu-toggle {
+                width:30px;
+                height:30px;
+                margin-left:15px;
+                background-color: $accent-color1;
+                mask-repeat: no-repeat;
+                -webkit-mask-image: url(./assets/img/mobile-nav-arrow.svg);
+                mask-image: url(./assets/img/mobile-nav-arrow.svg);
+                &.toggle-background{
+                    background-color: $color-cyan;
+                }
+            }
+    
+            @include mq($navigation-breakpoint){
+                margin-left:30px;
+    
+                .js-mobile-menu-toggle{
+                    display:none;
+                }
+            }
+        }
+    }
+
+    
+    .contact-us-btn{
+        min-width: auto;
+        @include mq($navigation-breakpoint){
+            @apply btn-outline-cyan btn-outline-cyan--on-white;
+            min-width: initial;
+            white-space: nowrap;
+        }
+    }
+
+    .mobile-container {
+        flex-grow: 1;
+        width: 100%;
+        max-height: 0px;
+        overflow-y: hidden;
+        will-change: transform;
+
+        transition: max-height 0.4s ease-in-out;
+        overflow-y: scroll;
+        max-height:0px;
+        height:calc(100vh - 15px - 33px);
+
+        &.open{
+            max-height: initial;
+        }
+        @include mq($navigation-breakpoint){
+            width: auto;
+            flex-shrink: 0;
+            height: 100%;
+            max-height: inherit;
+            overflow-y: visible;
+            display:flex;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+        }
+    }
+    
+
+    .menu-container{
+        padding-top:30px;
+        width:100%;
+        @include mq($navigation-breakpoint){
+            width:auto;
+            padding:0;
+        }
+    }
+
+    .hover-expand{
+        display: none;
+        position: relative;
+        width: 0;
+        .sub-menu-container{
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+            overflow: visible;
+            position: relative;
+        
+            .sub-menu{
+                display:table;
+                width: 100%;
+                background:white;
+
+                white-space: nowrap;
+                overflow: visible;
+
+                li{
+                    margin-top:10px;
+                    margin-bottom:10px;
+                    width: 100%;
+                    a{
+                        text-decoration: none;
+                        position: relative;
+                        padding:5px 30px;
+                    }
+                    &:first-child{
+                        padding-top:10px;
+                    }
+                    &:last-child{
+                        padding-bottom:10px;
+                    }
+                }
+                @include mq($navigation-breakpoint){
+                    color:white;
+                    background-color:$color-darkgray;
+
+                    .menu-item{
+                        &:hover{
+                            color:$color-cyan;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#navbar-search{
+    width:100%;
+    padding:10px 0;
+    @include mq($navigation-breakpoint){
+        width:auto;
+        padding:0;
+    }
+    .hover-expand{
+        width:100%;
+        display:block;
+        @include mq($navigation-breakpoint){
+            display:none;
+            width:0;
+        }
+    }
+    .sub-menu{
+        .search-form{
+            display:flex;
+            flex-wrap: nowrap;
+            font-size: 16px;
+            
+            width:100%;
+            padding:0;
+
+            .search-input{
+                flex-grow:1;
+                background:#F4F4F4;
+                background-color: #F4F4F4;
+                display:inline-block;
+                border: none;
+                color: $accent-color1;
+                padding:15px 20px;
+            }
+        }
+        @include mq($navigation-breakpoint){
+            transform: translateX(-252px);
+            padding: 18px 28px;
+            background:$color-darkgray;
+            .search-input{
+                width:300px;
+            }
+        }
+    }
+    &.open{
+        .hover-expand{
+            @include mq($navigation-breakpoint){
+                display:block;
+            }
+        }
+    }
+    .search-trigger{
+        flex-shrink:0;
+        background:#F4F4F4;
+        display:flex;
+        align-items: center;
+    }
+    .search-icon {
+        // display:none;
+        width: 17px;
+        height: 17px;
+        margin-left: 15px;
+        margin-right: 15px;
+        &.open{
+            background-color: $accent-color1;
+        }
+        &.mobile{
+            cursor: pointer;
+            margin-left:0;
+        }
+        // @include mq($navigation-breakpoint){
+        //     display:block;
+        // }
+    }
+    #search-icon-container {
+        display:none;
+        @include mq($navigation-breakpoint){
+            cursor: pointer;
+            display: flex;
+        }
+    }
+}
+
+ //////// Active Page States /////////
+
+            // .current-menu-parent,.current-menu-item,.current-page-ancestor{
+            //     a{
+            //         color: #db5454;
+            //         @media screen and (max-width: $navigation-breakpoint) {
+            //             color:#003047;
+            //             background: none
+            //         }
+            //     }
+            //     &:hover{
+            //         .sub-menu{
+            //             left:0;
+            //             .current_page_item,.current_page_item,.current_page_item {
+            //                 a{
+            //                     color: #003047
+            //                 }
+            //             } 
+            //         }
+            //         a{
+            //             color: #db5454;
+            //         }
+            //         @media screen and (max-width: $navigation-breakpoint) {
+            //             color:#003047;
+            //         }
+            //     }
+            // }
+            // &:first-of-type {
+            //     margin-left: 0
+            // }
+        // }

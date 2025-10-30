@@ -1,0 +1,36 @@
+.social-share-wrapper{
+    div{
+        margin:0 5px;
+    }
+    a{
+        &:after{
+            width:30px;
+            height:30px;
+            background-size:contain;
+            background-repeat: no-repeat;
+            content:'';
+            display:block;
+        }
+    }
+    .avvo{
+        a{
+            &:after{
+                background-image:url('./assets/img/avvo-footer-icon.svg');
+            }
+        }
+    }
+    .facebook{ 
+        a{  
+            &:after{
+                background-image:url('./assets/img/faceboot-footer-icon.svg');
+            }
+        }
+    }
+    .linkedin{ 
+        a{  
+            &:after{
+                background-image:url('./assets/img/linkedin-footer-icon.svg');
+            }
+        }
+    }
+}

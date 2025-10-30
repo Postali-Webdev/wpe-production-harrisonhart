@@ -1,0 +1,50 @@
+.pagination{
+    .page-numbers{
+        width:30px;
+        height:30px;
+        border-radius: 30px;
+        text-align: center;
+        line-height: 30px;
+        position: relative;
+        margin:0 5px;
+        &.prev,&.next{
+            // background:#666;
+            font-size:0;
+            display:inline-block;
+            border:2px solid white;
+            &:after{
+                content:'';
+                display:block;
+                box-sizing: border-box;
+                position: absolute;
+                inset:0;
+                width: 0px;
+                height: 0px;
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid transparent;
+                border-left: 7px solid #FFF;
+            }
+        }
+        &.prev{
+            margin-right:10px;
+            &:after{
+                transform: rotate(180deg);
+                left: 8px;
+                top: 6px;
+            }
+        }
+        
+        &.next{
+            margin-right:10px;
+            &:after{
+                // transform: rotate(-45deg);
+                left: 11px;
+                top: 6px;
+            }
+        }
+    }
+    .current{
+        color:$color-cyan;
+        // background:blue;
+    }
+}

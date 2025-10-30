@@ -1,0 +1,52 @@
+.section-label{
+    position: absolute;
+    overflow: visible;
+    width:28px;
+    height:100%;
+
+    flex-direction: column;
+    z-index: 25;
+
+    display:none;
+    @include mq($screen-xxxs){
+        display:flex;
+    }
+
+    .background-line{
+        display:block;
+        content:'';
+        width:1px;
+        height:100%;
+        background-color:#707070;
+    }
+
+    &__container{
+        margin-left: -28px;
+        flex-direction: column-reverse;
+        display:flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    p{
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        margin:0;
+        padding:0;
+        padding-bottom:20px;
+        white-space: nowrap;
+    }
+    .line{
+        display:block;
+        content:'';
+        margin-top:20px;
+        width:1px;
+        height:120px;
+        background-color:white;
+    }
+    .filler{
+        display:block;
+        content:'';
+        width:1px;
+        background-color:#707070;
+    }
+}

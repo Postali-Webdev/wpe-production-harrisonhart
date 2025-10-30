@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30">
+  <g id="mobile-nav-arrow" transform="translate(29.628 0.245) rotate(90)">
+    <path id="Polygon_4" data-name="Polygon 4" d="M6,0l6,8H0Z" transform="translate(19.755 8.628) rotate(90)" fill="#1d1d1d"/>
+    <g id="Ellipse_107" data-name="Ellipse 107" transform="translate(-0.245 0.628)" fill="none" stroke="#1d1d1d" stroke-width="2">
+      <ellipse cx="15" cy="14.5" rx="15" ry="14.5" stroke="none"/>
+      <ellipse cx="15" cy="14.5" rx="14" ry="13.5" fill="none"/>
+    </g>
+  </g>
+</svg>

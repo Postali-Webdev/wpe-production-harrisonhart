@@ -1,0 +1,6 @@
+#navbar-desktop{
+    display:none;
+    @include mq($navigation-breakpoint) {
+        display:block
+    }
+}

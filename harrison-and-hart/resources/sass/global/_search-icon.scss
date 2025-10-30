@@ -1,0 +1,7 @@
+.search-icon{
+    background-color: $accent-color1;
+    mask-repeat: no-repeat;
+    font-size: 0;
+    -webkit-mask-image: url(./assets/img/search-icon.svg);
+    mask-image: url(./assets/img/search-icon.svg);
+}

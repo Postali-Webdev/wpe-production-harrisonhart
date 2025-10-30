@@ -1,0 +1,42 @@
+.icon-container{
+    font-size: 70px;
+    width:70px;
+    height:70px;
+    @include mq($screen-sm){
+        font-size: 124px;
+        width:124px;
+        height:124px;
+    }
+    @include mq($screen-lg-md){
+        font-size:191px;
+        width:191px;
+        height:191px;
+    }
+    
+    
+    &.icon-left{
+        transform: translate(-5%, 0);
+        @include mq($screen-lg){
+            transform: translate(-50%, 0);
+        }
+        @include mq($screen-xl){
+            transform: translate(-90%, 0);
+        }
+    }
+    &.icon-center{
+       margin-left:auto;
+       margin-right:auto;
+       margin-bottom:50px;
+    }
+    &.icon-right{
+        transform: translate(20%, 0);
+        margin-right:0;
+        margin-left:auto;
+        @include mq($screen-lg){
+            transform: translate(20%, 0);
+        }
+        @include mq($screen-xl){
+            transform: translate(90%, 0);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.single-post{
+    .tags{
+        a{
+            text-decoration: underline;
+        }
+    }
+    .blog-author{
+        &__headshot{
+            height:50px;
+            width:50px;
+            border-radius: 50px;
+            background-color:white;
+            @include mq($mobile-breakpoint){
+                height:84px;
+                width:84px;
+                border-radius: 84px;
+            }
+        }
+        p{
+            margin-bottom:0;
+        }
+    }
+}

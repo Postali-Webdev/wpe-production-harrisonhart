@@ -1,0 +1,39 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+footer{
+    .custom-logo__wrapper{
+        background-color:white;
+        padding:rem(26px) rem($base-spacing-unit);
+    }
+    .custom-logo-link{
+        margin-left:auto;
+        margin-right:auto;
+        .custom-logo{
+            height:70px;
+            @include mq($screen-md){
+                // height:70px;
+            }
+        }
+    }
+    .phone-number{
+        padding:rem(26px) rem($base-spacing-unit);
+    }
+
+    ul{
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        li{
+            margin:0;
+            a{
+                text-decoration: none;
+                line-height: 150%;
+                font-size:1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+
+.no-gutters {
+    margin-left: rem(-15px);
+    margin-right: rem(-15px);
+    @include mq($screen-xxxs) {
+	    margin-left: rem($half-spacing-unit * -1);
+        margin-right: rem($half-spacing-unit * -1);
+    }
+    @include mq($tablet-breakpoint) {
+	    margin-left: rem($base-spacing-unit * -1);
+	    margin-right: rem($base-spacing-unit * -1);
+    }
+    @include mq($screen-full) {
+	    margin-left: rem($full-spacing-unit);
+	    margin-right: rem($full-spacing-unit);
+    }
+}
+
+.wrapper {
+	padding-left: rem(15px);
+	padding-right: rem(15px);
+    @include mq($screen-xxxs) {
+	    padding-left: rem($half-spacing-unit);
+	    padding-right: rem($half-spacing-unit);
+    }
+    @include mq($tablet-breakpoint) {
+	    padding-left: rem($base-spacing-unit);
+	    padding-right: rem($base-spacing-unit);
+    }
+    @include mq(calc($screen-full + ($base-spacing-unit * 2))) {
+	    padding-left: rem($full-spacing-unit);
+	    padding-right: rem($full-spacing-unit);
+    }
+}
+// Add to siteorigin row class to match gutter spacings as custom widgets
+/*! purgecss start ignore */
+// .row-gutters{
+//     padding-left: $half-spacing-unit;
+//     padding-right: $half-spacing-unit;
+//     @include mq($screen-lg-md) {
+//         padding-left: $base-spacing-unit;
+//         padding-right: $base-spacing-unit;
+//     }
+// }
+/*! purgecss end ignore */
+
+// .section {
+//     max-width: 1000px;
+//     margin: 0px auto;
+//     box-sizing: border-box;
+//     &--full {
+// 	    max-width: 100%;
+//     }
+//     &--wide {
+// 	    max-width: 1440px;
+//     }
+//     &--xwide {
+// 	    max-width: 1720px;
+//     }
+//     &--padded {
+//         box-sizing: border-box;
+//         padding: 0 $half-spacing-unit;
+//         @include mq($screen-lg-md) {
+//             padding: 0 $base-spacing-unit;
+//         }
+//         @include mq($screen-xl) {
+//             max-width: 1280px;
+//             margin: 0px auto;
+//         }
+//         @include mq($screen-xxl) {
+//             padding: 0 $base-spacing-unit;
+//         }
+//     }
+// }

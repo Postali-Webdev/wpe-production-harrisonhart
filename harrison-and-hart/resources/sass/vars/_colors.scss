@@ -1,0 +1,27 @@
+$primary-color: #FFF;
+$secondary-color: #5AD3D8;
+$accent-color1: #1D1D1D;
+$accent-color2: #2C2C2C;
+$background-color: #2C2C2C;
+
+$text-color: #FFF;
+$text-hover-color: #5AD3D8;
+$text-active-color: #78BE21;
+$text-footer: #FFF;
+$color-white: #FFF;
+$color-gray: #2C2C2C;
+$color-darkgray: #1D1D1D;
+$color-black: #000000;
+
+$color-cyan: $secondary-color;
+
+$colors: (
+    "primary": $primary-color,
+    "secondary": $secondary-color,
+    "cyan" : $secondary-color,
+    "accent": $accent-color1,
+    "white": $color-white,
+    "black": $color-black,
+    "gray": $color-gray,
+    "darkgray": $color-darkgray,
+);

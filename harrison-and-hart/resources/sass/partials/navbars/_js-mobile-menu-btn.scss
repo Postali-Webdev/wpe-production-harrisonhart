@@ -1,0 +1,59 @@
+.js-mobile-menu-btn {
+    width: 24px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    & {
+        cursor: pointer;
+        position: absolute;
+        span,
+        &:before,
+        &:after {
+            display: block;
+            width: 24px;
+            height: 4px;
+            background: $accent-color1;
+            border-radius: 2px;
+            position: absolute;
+        }
+        span {
+            top: 8px;
+            text-indent: -9999px;
+            overflow: hidden;
+            transition: .2s all;
+        }
+        &:before,
+        &:after {
+            content: '';
+        }
+        &:before {
+            top: 0;
+            transition: top .3s .3s, transform .3s;
+        }
+        &:after {
+            top: 16px;
+            transition: top .3s .3s, transform .3s;
+        }
+        &.open {
+            span {
+                opacity: 0;
+            }
+            &:before {
+                top: 8px;
+                transform: rotate(45deg);
+                transition: top .3s, transform .3s .3s;
+            }
+            &:after {
+                top: 8px;
+                transform: rotate(-45deg);
+                transition: top .3s, transform .3s .3s;
+            }
+        }
+    }
+    @include mq($navigation-breakpoint) {
+        display: none;
+    }
+}

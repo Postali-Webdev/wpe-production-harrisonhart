@@ -1,0 +1,155 @@
+div.wpcf7{
+    .ajax-loader{
+      display:none;  
+    }
+    .form-container{
+        margin-left:-6px;
+        margin-right:-6px;
+        .field-container{
+            position: relative;
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 6px;
+            color:$text-color;
+            label{
+                position:absolute;
+                top: -20px;
+            }
+        }
+        .wpcf7-form-control-wrap{
+            position: relative;
+            width: 100%
+        }
+    }
+}
+.wpcf7-form{
+    input,textarea{
+        // background:#515c72;
+        width:100%;
+        min-width: 100%;
+        padding:15px 20px;
+    }
+    .wpcf7-submit{
+        cursor: pointer;
+        text-decoration: none;
+        background-color:$color-gray;
+        display:inline-block;
+        padding-top:rem(18px);
+        padding-bottom:rem(18px);
+        padding-left:rem(18px);
+        padding-right:rem(18px);
+        // font-weight: 700;
+        text-align: center;
+        border:2px solid $color-cyan;
+        &:hover{
+            background-color:$color-cyan;
+            color:$color-darkgray;
+        }
+    }
+}
+.contact-form{
+    .image-container{
+        margin-left: rem(-15px);
+        margin-right: rem(-15px);
+        @include mq($screen-xxxs) {
+            margin-left: rem($half-spacing-unit * -1);
+            margin-right: rem($half-spacing-unit * -1);
+        }
+        @include mq($tablet-breakpoint) {
+            margin-left: rem(10px);
+            margin-right: auto;
+        }
+    }
+}
+#short-form{
+    .field-container{
+        &:nth-child(1){
+            margin-bottom:rem(65px);
+        }
+        &:nth-child(2){
+            margin-bottom:rem($half-spacing-unit);
+        }
+        &:nth-child(3){
+            margin-bottom:rem($half-spacing-unit);
+        }
+    }
+    @include mq($mobile-breakpoint){
+            align-items: center;
+            display:grid;
+            grid-gap:0px 12px;
+            grid-template-columns: repeat(2, 1fr);
+            .field-container{
+                &:nth-child(1){
+                    grid-column: span 1;
+                    margin-bottom:rem($half-spacing-unit);
+                }
+                &:nth-child(2){
+                    grid-column: span 1;
+                }
+                &:nth-child(3){
+                    grid-column: span 2;
+                }
+                &.submit{
+                    input{
+                        min-width:initial;
+                        width:initial;
+                    }
+                }
+        }
+    }  
+    @include mq($screen-lg){
+        grid-template-columns: repeat(3, 1fr);
+        .field-container{
+            &:nth-child(1){
+                grid-column: span 1;
+            }
+            &:nth-child(2){
+                grid-column: span 1;
+            }
+            &:nth-child(3){
+                grid-column: span 1;
+            }
+        }
+    }
+}
+
+#long-form{
+    .field-container{
+        margin-bottom:rem(65px);
+        &:nth-last-child(2){
+            margin-bottom:rem($half-spacing-unit);
+        }
+        &:last-child{
+            margin-bottom:rem($half-spacing-unit);
+        }
+    }
+    @include mq($mobile-breakpoint){
+            align-items: center;
+            display:grid;
+            grid-gap:0px 12px;
+            grid-template-columns: repeat(2, 1fr);
+            .field-container{
+                &:nth-child(1){
+                    grid-column: span 1;
+                }
+                &:nth-child(2){
+                    grid-column: span 1;
+                }
+                &:nth-child(3){
+                    grid-column: span 1;
+                }
+                &:nth-child(4){
+                    grid-column: span 1;
+                }
+                &:nth-child(5){
+                    grid-column: span 2;
+                }
+                &.submit{
+                    input{
+                        min-width:initial;
+                        width:initial;
+                    }
+                }
+        }
+    }  
+}

@@ -1,0 +1,49 @@
+$half-spacing-unit: 40px;
+$base-spacing-unit: 80px; 
+$full-spacing-unit: 280px;
+
+// Breakpoints NOTE: Update sizing ...pxList ini tailwind.config.js to match these breakpoints
+$max-width: 1920px;
+
+$screen-full: 1360px; //calc(1920px - ($full-spacing-unit * 2);
+// $screen-xxl: 1640px;
+$screen-xl: 1400px; //1364px
+$screen-lg: 1200px;
+$screen-lg-md: 1025px;
+$screen-md: 900px;
+$screen-sm: 768px;
+$screen-xs: 667px;
+$screen-xxs: 480px;
+$screen-xxxs: 360px;
+
+$mobile-breakpoint: $screen-sm - 1;
+$tablet-breakpoint: $screen-lg-md - 1; // offset it by 1 for ipadPro
+$navigation-breakpoint: $screen-lg - 1;
+
+$page-width: calc($max-width - ($full-spacing-unit * 2));
+$site-width: $max-width;
+
+
+// Containers
+// $container-max-width: $screen-xxl;
+$container-padding:30px;
+
+// Transitions
+$transition-speed:.3s;
+$transition-fast:.3s ease-in-ease-out;
+$transition-slow:.5s ease-in-ease-out;
+
+
+$link-transition-speed: .15s;
+$trans: 0.3s linear;
+
+
+$base-font-size: 16px; //NOTE: Update the base font size in tailwind.functions.js it useds to calculate all `rem` sizes on
+
+
+$body-line-height: 130%;
+
+// Font Weight
+$normal: 400;
+$bold: 700; 
+$black: 900;

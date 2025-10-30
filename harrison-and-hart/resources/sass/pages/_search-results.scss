@@ -1,0 +1,37 @@
+.search-form-container{
+    .search-form{
+        position: relative;
+        margin-top:30px;
+        margin-bottom:30px;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 0;
+        .search-input{
+            width:100%;
+            flex-grow: 1;
+            background: #F4F4F4;
+            background-color: #F4F4F4;
+            display: inline-block;
+            border: none;
+            color: #1D1D1D;
+            padding: 15px 20px;
+        }
+
+        .search-trigger{
+            flex-shrink: 0;
+            background: #F4F4F4;
+            display: flex;
+            align-items: center;
+        }
+        .search-icon{
+            width:40px;
+            height:40px;
+            margin-top:5px;
+            margin-right:10px;
+        }
+        @include mq($screen-lg){
+            margin-bottom:120px;
+        }
+    }
+}

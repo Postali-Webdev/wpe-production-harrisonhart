@@ -1,0 +1,51 @@
+.page-practice-areas{
+    .card{
+        .btn{
+            border:1px solid $color-cyan;  
+            &:hover{
+                border:1px solid white;
+            } 
+        }
+        a{
+            &:hover{
+                color:$color-cyan;
+            }
+        }
+    }
+    .icon-container{
+        // width:187px;
+        // height:187px;
+        // font-size:187px;
+        position:absolute;
+        top:-35px;
+        left:10px;
+        @include mq($screen-sm){
+            // font-size: 124px;
+            // width:124px;
+            // height:124px;
+            top:-62px;
+        }
+        @include mq($screen-lg-md){
+            // font-size: 124px;
+            // width:124px;
+            // height:124px;
+            // left:10px;
+            // top:-62px;
+            left:-93px;
+            top:10px;
+        }
+
+        //$screen-xl
+        @include mq($screen-lg){
+            // font-size: 124px;
+            // width:124px;
+            // height:124px;
+            // left:10px;
+            // top:-62px;
+            // left:-93px;
+            // top:10px;
+        }
+
+        
+    }
+}

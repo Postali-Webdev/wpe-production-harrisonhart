@@ -1,0 +1,22 @@
+@mixin lato-reg(){
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+@mixin lato-bold(){
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+@mixin lato-black(){
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+@mixin times(){
+    font-family: 'Times', serif;
+}
+
+@mixin benton(){
+    letter-spacing: 0.1em;
+    font-family: 'Benton Sans', serif;
+}

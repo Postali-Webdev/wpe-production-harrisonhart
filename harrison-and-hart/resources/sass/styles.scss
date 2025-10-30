@@ -1,0 +1,79 @@
+/*!
+    Theme Name:   Harrison & Hart
+    Theme URI:    https://www.postali.com
+    Description:  Postali Custom WordPress Theme
+    Author:       Postali
+    Author URI:   https://www.postali.com
+    Version:      1.1.0
+    Text Domain:  postali
+*/
+
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Start purging... */
+/* Stop purging. */
+
+
+@import 'vars/units';
+@import 'vars/colors';
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import "utils/functions/em";
+
+@import 'global/fonts';
+@import "utils/mixins/fonts";
+
+@import 'global/base';
+@import 'global/typography';
+@import 'global/icon';
+@import 'global/wysiwyg';
+@import 'global/wrappers';
+@import 'global/search-icon';
+
+
+//overwrite vendor styles
+// @import "vendor/slick-styles";
+
+
+@import 'global/buttons';
+@import 'global/forms';
+// @import 'global/modal';
+
+
+
+@import 'partials/blog-thumb';
+@import 'partials/progress-circle';
+@import 'partials/section-label';
+@import 'partials/breadcrumbs';
+@import 'partials/pagination';
+@import 'partials/cards';
+@import 'partials/navbars/js-mobile-menu-btn';
+@import 'partials/navbars/navbar-menu-accordion';
+// @import 'partials/navbars/navbar-fixed';
+// @import 'partials/navbars/navbar-search';
+
+
+
+@import 'sections/navbar';
+@import 'sections/meet-us';
+@import 'sections/practice-areas';
+@import 'sections/hero';
+
+
+
+@import 'pages/front-page';
+@import 'pages/page-practice-areas';
+@import 'pages/page-about-our-staff';
+@import 'pages/single-post';
+@import 'pages/search-results';
+@import 'pages/contact-us';
+
+@import 'footer';
+// @import 'header';
+
+
+*{
+    // border:1px solid red !important;
+}

@@ -1,0 +1,15 @@
+.card-container{
+    .card{
+        margin-bottom:30px;
+    }
+    @include mq($screen-lg-md) {
+        margin-left:-8px;
+        margin-right:-8px;
+        .card{
+            flex:1 0 50%;
+            margin:8px;
+            width:calc(50% - 16px);
+            max-width:calc(50% - 16px);
+        }
+    }
+}

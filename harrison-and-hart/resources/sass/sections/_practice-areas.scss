@@ -1,0 +1,50 @@
+.practice-areas{
+    .card{
+        padding:15px;
+        border:2px solid $color-darkgray;
+        a{
+            text-decoration: none;
+        }
+        &:hover{
+            border:2px solid $color-cyan;
+            .title{
+                color:$color-cyan;
+            }
+        }
+        .desc{
+            pointer-events: none;
+            a{
+                color:$color-cyan;
+            }
+        }
+        .title{
+            margin-left:20px;
+            font-size:rem(22px);
+            line-height:rem(33px);
+        }
+        @include mq($tablet-breakpoint){
+            padding:rem(40px);
+            .title{
+                margin-left:0;
+                font-size:rem(35px);
+                line-height:rem(40px);
+            }
+        }
+    }
+    .icon-container{
+        width:99px;
+        height:99px;
+        font-size:99px;
+        transform: translate(-30%, -30%);
+        @include mq($mobile-breakpoint) {
+            
+        }
+        @include mq($tablet-breakpoint){
+            margin-right:rem(40px);
+            transform: translate(0, 0);
+            width:116px;
+            height:116px;
+            font-size:116px;
+        }
+    }
+}
